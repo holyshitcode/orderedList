@@ -10,6 +10,7 @@ typedef struct Student{
     char *name;
 }student;
 
+
 student *init() {
     student *temp = (student *)malloc(sizeof(student));
     temp->name = (char *)malloc(sizeof(char) * 30);
@@ -31,6 +32,7 @@ int compare(student *stuList, int stuListLen, int stuId) {
     }
     return stuListLen;;
 }
+
 
 int insert(student *stuList, int *stuListLen, student *data) {
     if (*stuListLen == 0) {
@@ -124,7 +126,7 @@ void menuShow() {
     printf("---------------------------------------------------------------------------\n");
 }
 
-void request(char choice, student *stuList, int *stuListLen, student *cache,FILE *write, FILE *read) {
+void request(char choice, student *stuList, int *stuListLen, student *cache, FILE *write, FILE *read) {
     switch (choice) {
         case '1': {
             char i;
@@ -343,7 +345,7 @@ int main(void)
         scanf("%c", &choice);
         getchar();
         if (choice == 'q') {
-            printf("Exiting...\n");
+            printf("-------Exit-------\n");
             freeStudentList(students, studentsLen);
             free(cache);
             exit(0);
